@@ -1,3 +1,5 @@
+<!-- le header de la page  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

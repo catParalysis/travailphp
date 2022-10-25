@@ -1,3 +1,5 @@
+<!--   ici j'ai rien inventé..... c'est exactement la meme chose que ce que tu nous a montré a peut etre une petite exception -->
+
 <?php
     if(isset($_REQUEST["identifiant"], $_REQUEST["password"]))
     {

@@ -6,8 +6,8 @@
     define("USERNAME", "e2194690");
     define("PASSWORD", "1GRXSCzxK04Oyeu4gQdQ");
     define("DBNAME", "e2194690");
-
-    */
+*/
+    
 // ecole mamp // maison Wamp     
 /* define("SERVER", "localhost");
 define("USERNAME", "root");
@@ -19,6 +19,8 @@ define("DBNAME", "e2194690"); */
     define("USERNAME", "root");
     define("PASSWORD", "");
     define("DBNAME", "e2194690"); 
+
+//connexion a la db
 
 function connectDB()
 {
@@ -34,7 +36,11 @@ function connectDB()
     return $c;
 }
 
+
 $connexion = connectDB();
+
+
+// login encrypté, encore une fois c'est pas moi le génie la dedans haha, mais je pense l'utilise a bonne et du forme
 
 function loginEncrypte($username, $password)
 {
@@ -64,6 +70,9 @@ function loginEncrypte($username, $password)
         }
     }
 }
+
+// function logout que tu nous a montré
+
 function logout()
 {
     $_SESSION = array();
@@ -83,6 +92,9 @@ function logout()
 
     session_destroy();
 }
+
+// function d'affichage assez simple comme select
+
 function affichage()
 {
 
@@ -93,6 +105,9 @@ function affichage()
 
     return $resultats;
 }
+
+// funciton creation article, vue que j'insère j'ai décidé d'y aller avec les requêtes préparés
+
 function creationArticle($idAuteur, $titre, $texte)
 {
 
@@ -110,6 +125,9 @@ function creationArticle($idAuteur, $titre, $texte)
     var_dump($texte);
         die("Erreur de requête préparée...");
 }
+
+// modification d'article celle la c'est celle que j'ai décidé de mettre le paquet pour éviter que quelqu,un s'en serve avec l'url. la fonction elle meme redirige si l'usager n'est pas le bon
+
 function modifieArticle($idUsager, $idAuteur, $id, $titre, $texte)
 {
     global $connexion;
@@ -128,6 +146,9 @@ function modifieArticle($idUsager, $idAuteur, $id, $titre, $texte)
         die("Erreur de requête préparée...");
 }
 
+
+// function delete,, encore une fois avec une req prep
+
 function supprimerArticle($id)
 {
     global $connexion;
@@ -141,6 +162,9 @@ function supprimerArticle($id)
     } else
         die("Erreur de requête préparée...");
 }
+
+// ici c'est pour la modification de l'article, je ne fetch qu'un seul article et si la personne y a acces c'est qu'elle est deja connecté
+
 function afficheArticleSeul($id)
 {
     global $connexion;
@@ -151,11 +175,17 @@ function afficheArticleSeul($id)
 
     return $resultats;
 }
+
+// ici c'est pour eviter de répéter ces instructions a chaques fois que je voulais empêcher quelqu'un de passer par l'url
+
 function verifLogin(){
     if (!isset($_SESSION["usager"])) {
         header('Location: index.php?command=Accueil');
     }
 }
+
+// function de recherche, je me suis inspiré de ma function pour l'exercice de ligue.. 
+
 function rechercheArticle($key){
     
     global $connexion;

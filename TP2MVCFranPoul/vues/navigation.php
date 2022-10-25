@@ -1,4 +1,5 @@
 <?php 
+    // ma navigation qui s'adapte selon un usager du site web ou bien un visiteur...
         echo "<nav>";
     if (!isset($_SESSION["usager"])) 
         {

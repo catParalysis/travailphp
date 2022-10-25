@@ -1,4 +1,5 @@
 <?php
+    // ouverture de session
     session_start();
 
     if(!isset($_REQUEST["command"])){
@@ -15,9 +16,10 @@
     }
     
     require_once("modele.php");
-
+    //le coeur du controlleur
     switch($command)
     {   
+        // accueil
         case "Accueil":
 
             $donnees["titre"] = "Accueil";
@@ -27,7 +29,7 @@
             require("vues/grosseFace.php");
             require_once("vues/footer.php");
             break;
-
+        // login
         case "Login":
 
             $donnees["titre"] = "Login";
@@ -39,6 +41,7 @@
             require_once("vues/footer.php");
             break;
 
+        // logout
         case "Logout":
 
             $donnees["titre"] = "Accueil";
@@ -50,7 +53,8 @@
             require("vues/grosseFace.php");
             require_once("vues/footer.php");
             break;
-
+        
+        //affichage et données pour la page 
         case "Affichage":
 
             $donnees["titre"] ="affichage";
@@ -61,9 +65,9 @@
             require_once("vues/affichage.php");
             require_once("vues/footer.php");
             break;
-
+        //la function supprimer pour enlever un article a la fois et le message pour la suppression
         case "Supprimer":
-
+            // VERIFLOGIN cette fonction est au début de chacune des commandes qui pourrais etre utilisé par quelqu'un qui contourne par l'url, donc elle sert de premiere ligne de défence...
             verifLogin();
             if(isset($_REQUEST["idArticle"]))
             {
@@ -79,7 +83,7 @@
             require_once("vues/affichage.php");
             require_once("vues/footer.php");
             break;
-
+        // la function modifier, c'est assez semblable au autres je vérifie
         case "Modifier":
 
             verifLogin();
@@ -119,7 +123,7 @@
             require_once("vues/affichage.php");
             require_once("vues/footer.php");
             break;
-
+        // création de l'article avec une verif login encore 
         case "Creation":
 
             verifLogin();
@@ -130,9 +134,9 @@
             require_once("vues/form_creation.php");
             require_once("vues/footer.php");
             break;
-
+        // on envois les données recueillies dans la création vers la function qui inserera la table dans la DB
         case "CreationTermine":
-            
+        
             verifLogin();
             if(isset($_REQUEST["titre"]) && isset($_REQUEST["texte"]))
             {   
@@ -150,7 +154,7 @@
             require_once("vues/affichage.php");
             require_once("vues/footer.php");
             break;
-
+        //  function de recheche qui cheche dans les articles , titres, auteur et textes
         case "Recherche":
 
             verifLogin();
