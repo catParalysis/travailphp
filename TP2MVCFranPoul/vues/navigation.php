@@ -23,5 +23,4 @@
         {
         echo "<h3>Merci, " . $donnees["nomUsager"] . " " ."d'être passé nous voir! n'oubliez pas d'aller voir notre page facebook!</h3>";    
         }
-
 ?>

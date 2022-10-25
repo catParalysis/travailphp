@@ -15,7 +15,6 @@
         }
     }
 ?>
-
 <form method="POST">
     <label for="identifiant">Username : </label>
     <input type="text" name="identifiant"></br>
@@ -23,7 +22,6 @@
     <input type="password" name="password">
     <input type="submit" value="Authentification">
 </form>
-
 <?php 
     if(isset($donnees["message"]))
         echo "<p>" . $donnees["message"] . "</p>";

@@ -132,6 +132,7 @@
             break;
 
         case "CreationTermine":
+            
             verifLogin();
             if(isset($_REQUEST["titre"]) && isset($_REQUEST["texte"]))
             {   
@@ -149,7 +150,9 @@
             require_once("vues/affichage.php");
             require_once("vues/footer.php");
             break;
+
         case "Recherche":
+
             verifLogin();
             if(isset($_REQUEST["recherche"])){
                 $key = $_REQUEST["recherche"];
@@ -163,16 +166,5 @@
             require_once("vues/affichage.php");
             require_once("vues/footer.php");
             break;
-
-
-
-
-    
-
-
-
-
         }
-
-
 ?>
