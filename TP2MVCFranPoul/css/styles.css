@@ -1,0 +1,81 @@
+nav{
+    display: flex;
+    justify-content: center;
+
+}
+nav>p{
+    font-size: 18px;
+    
+}
+
+html{
+    background-color: lightgrey;
+}
+a{
+    padding: 20px;
+}
+.grosse_face{
+    height: 45vh;
+    vertical-align: 50%;
+    text-align: center;
+}
+.grosse_face>img{
+    object-fit: cover;
+    height: 100%;
+}
+form{
+    background-color: gray;
+    margin: auto;
+}
+input{
+    border-radius: 3px;
+}
+form>label{
+    font-size: 18px;
+    margin: 20px;
+}
+form>input{
+    margin:  10px 20px;
+}
+.articles{
+    margin: 100px auto;
+    text-align: center;
+    max-width: 70vw;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+}
+.articles>p{
+    padding: 0 10px;
+}
+.articleTopForm{
+    max-width: 70vw;
+    margin: auto;
+    text-align: right;
+    background-color: white;
+
+}
+p{
+    word-wrap: break-word; 
+}
+.formModif{
+    max-width: 70vw;
+    margin: auto;
+    margin-top: 20vh;
+    border-radius: 4px;
+}
+.formModif>input, textarea{
+    font-size: 18px;
+    margin-left: 45px;
+}
+.formModif>p{
+    font-size: 20px;
+    margin-left: 35px;
+
+}
+.recherche{
+    text-align: right;
+}
+.recherche>form{
+    background-color: lightgray;
+}
