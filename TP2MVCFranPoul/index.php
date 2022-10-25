@@ -71,7 +71,7 @@
             }
             supprimerArticle($id);
             $donnees["msg"] = "Article Supprimé";
-            $donnees["titre"] ="affichage";
+            $donnees["titre"] ="Affichage";
             $donnees["articles"] = affichage();
             require_once("vues/header.php");
             require_once("vues/navigation.php");
