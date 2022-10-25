@@ -9,16 +9,16 @@
 
     */
 // ecole mamp // maison Wamp     
-define("SERVER", "localhost");
+/* define("SERVER", "localhost");
 define("USERNAME", "root");
 define("PASSWORD", "root");
-define("DBNAME", "e2194690");
+define("DBNAME", "e2194690"); */
 
 //XAMPP
-/*  define("SERVER", "localhost");
+    define("SERVER", "localhost");
     define("USERNAME", "root");
     define("PASSWORD", "");
-    define("DBNAME", "e2194690"); */
+    define("DBNAME", "e2194690"); 
 
 function connectDB()
 {
